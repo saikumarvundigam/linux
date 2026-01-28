@@ -1,5 +1,7 @@
 #!/bin/bash
 
-# This is the commen, This will not be executed 
+# This is the comment, This will not be executed 
 echo "hello world..!!"
 
+# This is the comment, This will not be executed 
+echo "Welcome Sai"
