@@ -1,7 +1,19 @@
-#!/bin.bash
+#!/bin/bash
 
-echo "Please enter the name"
-read PERSON1
+USERID=$(id -u)
+if [ $USERID -ne 0 ]
+echo "Please login using Root user"
+fi
 
+VALIDATE()
+{
+if [ $1 -ne 0 ]
+echo "$2 is Failed"
+exit 1
+else
+echo "$2 is completed"
+fi
+}
 
-echo "$PERSON1:Hii how are you...?"
+dnf install nginx
+VALIDATE $1 "Nginx Installation"
