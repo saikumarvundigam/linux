@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -e
+trap 'echo" There is an errorn in $LINENO, command: $BASH_COMMAND"' ERR
+
 USERID=$(id -u)
 LOG_FOLDER="$/var/log/shell-script"
 LOG_FILE="$/var/log/shell-script/shell-script.log"
@@ -15,16 +18,6 @@ if [ $USERID -ne 0 ]; then
 fi
 
 mkdir -p $LOG_FOLDER
-
-VALIDATE()
-{
-if [ $1 -ne 0 ]; then
-    echo "$2 is $R Failed $N"
-    exit 1
-else
-    echo "$2 is $R completed $N"
-fi
-}
 
 for software in $@ # sudo sh loops.sh nginx mysql nodejs
 do
