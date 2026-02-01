@@ -13,7 +13,7 @@ Y="\e[34m"
 N="\e[0m"
 
 if [ $USERID -ne 0 ]; then
-    echo "$R Please login using Root user $N" | tee -a $LOG_FILE
+    echo "$R Please login using Root user $N" | tee -a $LOG_FILE 
     exit1
 fi
 
